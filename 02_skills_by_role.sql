@@ -1,9 +1,8 @@
--- ============================================================
 -- Analysis: Skill demand by role
 -- Question: Which skills are most in-demand for Data Analyst,
 --           Data Scientist, and Machine Learning roles, and how
 --           does demand differ between them?
--- ============================================================
+
 
 SELECT
   CASE
@@ -23,7 +22,7 @@ WHERE title LIKE '%data analyst%'
    OR title LIKE '%machine learning%'
 GROUP BY role;
 
--- ------------------------------------------------------------
+
 -- Result (n=93 postings total):
 --
 -- role               python_pct  sql_pct  excel_pct  tableau_pct  total
@@ -36,4 +35,3 @@ GROUP BY role;
 -- Scientist postings (96%) from Analyst postings (31%). Tableau
 -- and Excel are largely Analyst/Scientist-specific and absent
 -- from Machine Learning postings.
--- ------------------------------------------------------------
