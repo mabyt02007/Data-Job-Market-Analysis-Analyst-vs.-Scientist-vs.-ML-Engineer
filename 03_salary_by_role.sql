@@ -1,9 +1,7 @@
--- ============================================================
 -- Analysis: Salary by role
 -- Question: How does average annual salary compare across
 --           Data Analyst, Data Scientist, and Machine Learning
 --           postings, once pay-period units are normalized?
--- ============================================================
 
 SELECT
   CASE
@@ -24,7 +22,6 @@ WHERE (title LIKE '%data analyst%'
   AND salary_annual_est >= 10000   -- excludes corrupted/mislabeled rows
 GROUP BY role;
 
--- ------------------------------------------------------------
 -- Result:
 --
 -- role               avg_salary  min_salary  max_salary  postings_with_salary
@@ -40,4 +37,3 @@ GROUP BY role;
 --
 -- Note: sample sizes are modest (13-20 postings per role with
 -- disclosed salary) — directional, not statistically robust.
--- ------------------------------------------------------------
